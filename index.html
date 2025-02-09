@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Para la persona mas increible del mundo... Mi amada</title>
+    <!-- Fuente para la carta -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+            overflow: auto;
+        }
+        /* Video de fondo */
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        /* Contenedor del corazón */
+        #entryContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            background: transparent;
+            transition: opacity 2s ease;
+        }
+        /* Botón sin estilo */
+        #entryButton {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        /* Contenedor para el corazón (1000x1000) */
+        .heart-container {
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* SVG de corazón */
+        .heart-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: #ff4d4d;
+            animation: beat 1s infinite;
+            transform-origin: center;
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Texto dentro del corazón centrado y dividido en dos líneas */
+        .heart-text {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 80px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            top: -20px;
+            width: 100%;
+            height: 100%;
+            word-break: break-word;
+            animation: beat 1s infinite;
+        }
+        /* Contenedor de la carta (mensaje) */
+        #messageContainer {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            z-index: 3;
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #message {
+            animation: floatUp 5s ease-out forwards;
+        }
+
+            #message p {
+                margin-bottom: 20px;
+            }
+        /* Estilos para fade in/out al hacer scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+    </style>
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video id="bgVideo" autoplay muted loop playsinline>
+        <source src="fondo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <!-- Contenedor del corazón -->
+    <div id="entryContainer">
+        <button id="entryButton" aria-label="Abrir carta de amor">
+            <div class="heart-container">
+                <svg class="heart-svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                             C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                             C13.09 3.81 14.76 3 16.5 3
+                             C19.58 3 22 5.42 22 8.5
+                             c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+                <div class="heart-text">
+                    ¿QUIERES SER MI <br>
+                    SAN VALENTÍN?
+                </div>
+            </div>
+        </button>
+    </div>
+
+    <!-- Contenedor de la carta -->
+    <div id="messageContainer">
+        <div id="message">
+            <p class="fade-in">No hay día en que no sueñe con el momento en que pueda perderme completamente en ti. La forma en que tus labios buscan los míos, cómo tus manos recorren mi piel con esa mezcla perfecta de ternura y pasión, me tiene completamente rendido ante ti.</p>
+            <p class="fade-in">Me enciendes con una sola mirada, con ese brillo en tus ojos que parece invitarme a descubrir cada secreto de tu ser. Me pierdo en el aroma de tu piel, en el calor de tu cuerpo que me llama, me envuelve, y me hace desearte como nada en este mundo.</p>
+            <p class="fade-in">Hay noches en las que mi mente vaga, imaginando tus suspiros entrecortados, tus dedos aferrándose a mí, y el fuego que creamos juntos, ese que parece no apagarse nunca. Tus curvas son un mapa que quiero recorrer una y otra vez, con mis manos, mis labios y cada parte de mí que late por ti.</p>
+            <p class="fade-in">Te amo con una intensidad que me consume, pero también te deseo de una manera que no puedo explicar con palabras. Eres el punto donde el amor más puro y la pasión más ardiente se encuentran, y no hay nada que anhele más que ser la persona que lo comparte todo contigo.</p>
+            <p class="fade-in">Cada caricia, cada beso, cada momento contigo es un recuerdo que llevo grabado en mi alma, y cada uno me deja con ganas de más. Porque contigo no hay límites, solo un deseo infinito de entregarnos al amor y al placer que compartimos.</p>
+        </div>
+    </div>
+
+    <!-- Audio en bucle -->
+    <audio id="song" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <script>
+        document.getElementById('entryButton').addEventListener('click', function () {
+            var audio = document.getElementById('song');
+            audio.play();
+            var entryContainer = document.getElementById('entryContainer');
+            entryContainer.style.opacity = 0;
+            setTimeout(function () {
+                entryContainer.style.display = 'none';
+                document.getElementById('messageContainer').style.display = 'block';
+                observeElements();
+            }, 2000);
+        });
+
+        function observeElements() {
+            var faders = document.querySelectorAll('.fade-in');
+            var options = { threshold: 0.1 };
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, options);
+            faders.forEach(function (fader) {
+                observer.observe(fader);
+            });
+        }
+    </script>
+</body>
+</html>
