@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Para la persona mas increible del mundo... Mi amada</title>
+    <title>Para la persona más increíble del mundo... Mi amada</title>
     <!-- Fuente para la carta -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fuente romántica para el último texto -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+    </style>
     <style>
         /* Estilos base */
         body, html {
@@ -26,7 +30,7 @@
             object-fit: cover;
             z-index: -1;
         }
-        /* Contenedor del corazón */
+        /* Contenedor del corazón de entrada */
         #entryContainer {
             position: fixed;
             top: 0;
@@ -47,7 +51,7 @@
             cursor: pointer;
             outline: none;
         }
-        /* Contenedor para el corazón (1000x1000) */
+        /* Contenedor para el corazón de entrada */
         .heart-container {
             position: relative;
             width: 1000px;
@@ -56,7 +60,7 @@
             justify-content: center;
             align-items: center;
         }
-        /* SVG de corazón */
+        /* SVG del corazón de entrada con efecto latido */
         .heart-svg {
             position: absolute;
             width: 100%;
@@ -91,7 +95,7 @@
             font-weight: bold;
             text-transform: uppercase;
             color: white;
-            top: -20px;
+            top: -30px;
             width: 100%;
             height: 100%;
             word-break: break-word;
@@ -112,6 +116,7 @@
             line-height: 1.6;
             font-size: 36px;
             font-family: 'Playfair Display', serif;
+            transition: opacity 2s ease-out;
         }
 
         @keyframes floatUp {
@@ -133,7 +138,7 @@
             #message p {
                 margin-bottom: 20px;
             }
-        /* Estilos para fade in/out al hacer scroll */
+        /* Animación fade-in/fade-out basada en scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(50px);
@@ -144,6 +149,46 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        /* --- NUEVOS ELEMENTOS AGREGADOS --- */
+        /* Contenedor para el GIF (segundo corazón) que servirá como botón */
+        #florContainer {
+            text-align: center;
+            margin-top: 40px;
+            cursor: pointer;
+        }
+
+            #florContainer svg {
+                width: 400px;
+                height: 400px;
+                max-width: 800px;
+                display: block;
+                margin: 0 auto;
+            }
+        /* Contenedor para la imagen final y el mensaje */
+        #fotoContainer {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 2s ease-in;
+            z-index: 3;
+        }
+
+            #fotoContainer img {
+                max-width: 90%;
+                height: auto;
+            }
+            /* Nuevo estilo romántico para el texto final */
+            #fotoContainer p {
+                font-family: 'Dancing Script', cursive;
+                font-size: 42px;
+                color: #ffc0cb;
+                text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+                margin-top: 20px;
+            }
     </style>
 </head>
 <body>
@@ -153,7 +198,7 @@
         Tu navegador no soporta videos HTML5.
     </video>
 
-    <!-- Contenedor del corazón -->
+    <!-- Contenedor del primer corazón de entrada -->
     <div id="entryContainer">
         <button id="entryButton" aria-label="Abrir carta de amor">
             <div class="heart-container">
@@ -172,24 +217,54 @@
         </button>
     </div>
 
-    <!-- Contenedor de la carta -->
+    <!-- Contenedor de la carta (mensaje) -->
     <div id="messageContainer">
         <div id="message">
-            <p class="fade-in">No hay día en que no sueñe con el momento en que pueda perderme completamente en ti. La forma en que tus labios buscan los míos, cómo tus manos recorren mi piel con esa mezcla perfecta de ternura y pasión, me tiene completamente rendido ante ti.</p>
-            <p class="fade-in">Me enciendes con una sola mirada, con ese brillo en tus ojos que parece invitarme a descubrir cada secreto de tu ser. Me pierdo en el aroma de tu piel, en el calor de tu cuerpo que me llama, me envuelve, y me hace desearte como nada en este mundo.</p>
-            <p class="fade-in">Hay noches en las que mi mente vaga, imaginando tus suspiros entrecortados, tus dedos aferrándose a mí, y el fuego que creamos juntos, ese que parece no apagarse nunca. Tus curvas son un mapa que quiero recorrer una y otra vez, con mis manos, mis labios y cada parte de mí que late por ti.</p>
-            <p class="fade-in">Te amo con una intensidad que me consume, pero también te deseo de una manera que no puedo explicar con palabras. Eres el punto donde el amor más puro y la pasión más ardiente se encuentran, y no hay nada que anhele más que ser la persona que lo comparte todo contigo.</p>
-            <p class="fade-in">Cada caricia, cada beso, cada momento contigo es un recuerdo que llevo grabado en mi alma, y cada uno me deja con ganas de más. Porque contigo no hay límites, solo un deseo infinito de entregarnos al amor y al placer que compartimos.</p>
+            <p class="fade-in visible">No hay día en que no sueñe con el momento en que pueda perderme completamente en ti. La forma en que tus labios buscan los míos, cómo tus manos recorren mi piel con esa mezcla perfecta de ternura y pasión, me tiene completamente rendido ante ti.</p>
+            <p class="fade-in visible">Me enciendes con una sola mirada, con ese brillo en tus ojos que parece invitarme a descubrir cada secreto de tu ser. Me pierdo en el aroma de tu piel, en el calor de tu cuerpo que me llama, me envuelve, y me hace desearte como nada en este mundo.</p>
+            <p class="fade-in visible">Hay noches en las que mi mente vaga, imaginando tus suspiros entrecortados, tus dedos aferrándose a mí, y el fuego que creamos juntos, ese que parece no apagarse nunca. Tus curvas son un mapa que quiero recorrer una y otra vez, con mis manos, mis labios y cada parte de mí que late por ti.</p>
+            <p class="fade-in visible">Te amo con una intensidad que me consume, pero también te deseo de una manera que no puedo explicar con palabras. Eres el punto donde el amor más puro y la pasión más ardiente se encuentran, y no hay nada que anhele más que ser la persona que lo comparte todo contigo.</p>
+            <p class="fade-in visible">Cada caricia, cada beso, cada momento contigo es un recuerdo que llevo grabado en mi alma, y cada uno me deja con ganas de más. Porque contigo no hay límites, solo un deseo infinito de entregarnos al amor y al placer que compartimos.</p>
+        </div>
+        <!-- El GIF "flor" (segundo corazón) actúa como botón -->
+        <div id="florContainer">
+            <div class="heart-gif">
+                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <clipPath id="heartClip">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                                     C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                                     C13.09 3.81 14.76 3 16.5 3
+                                     C19.58 3 22 5.42 22 8.5
+                                     c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </clipPath>
+                    </defs>
+                    <image xlink:href="flor.gif" clip-path="url(#heartClip)" width="24" height="24" preserveAspectRatio="xMidYMid slice" />
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                             C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                             C13.09 3.81 14.76 3 16.5 3
+                             C19.58 3 22 5.42 22 8.5
+                             c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                          fill="none" stroke="pink" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+            </div>
         </div>
     </div>
 
-    <!-- Audio en bucle -->
+    <!-- Contenedor para la imagen final y el mensaje -->
+    <div id="fotoContainer">
+        <img src="foto.jpg" alt="Foto">
+        <p>QUIERO SEGUIR ESCRIBIENDO NUESTRA HISTORIA JUNTOS</p>
+    </div>
+
+    <!-- AUDIO -->
     <audio id="song" loop>
         <source src="cancion.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
     </audio>
 
     <script>
+        // Al presionar el primer corazón se inicia la carta
         document.getElementById('entryButton').addEventListener('click', function () {
             var audio = document.getElementById('song');
             audio.play();
@@ -197,27 +272,26 @@
             entryContainer.style.opacity = 0;
             setTimeout(function () {
                 entryContainer.style.display = 'none';
-                document.getElementById('messageContainer').style.display = 'block';
-                observeElements();
-            }, 2000);
+                var messageContainer = document.getElementById('messageContainer');
+                messageContainer.style.display = 'block';
+                messageContainer.style.opacity = 1;
+            }, 1000);
         });
 
-        function observeElements() {
-            var faders = document.querySelectorAll('.fade-in');
-            var options = { threshold: 0.1 };
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, options);
-            faders.forEach(function (fader) {
-                observer.observe(fader);
-            });
-        }
+        // Al presionar el GIF (segundo corazón) se desvanece la carta y aparece la imagen final con el mensaje
+        document.getElementById('florContainer').addEventListener('click', function () {
+            var messageContainer = document.getElementById('messageContainer');
+            messageContainer.style.transition = "opacity 2s ease-out";
+            messageContainer.style.opacity = 0;
+            setTimeout(function () {
+                messageContainer.style.display = "none";
+                var fotoContainer = document.getElementById('fotoContainer');
+                fotoContainer.style.display = "block";
+                void fotoContainer.offsetWidth;
+                fotoContainer.style.transition = "opacity 2s ease-in";
+                fotoContainer.style.opacity = 1;
+            }, 2000);
+        });
     </script>
 </body>
 </html>
