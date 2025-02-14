@@ -83,7 +83,7 @@
                 transform: scale(1);
             }
         }
-        /* Texto dentro del corazón centrado y dividido en dos líneas */
+        /* Texto dentro del corazón centrado */
         .heart-text {
             position: relative;
             z-index: 1;
@@ -149,7 +149,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        /* --- NUEVOS ELEMENTOS AGREGADOS --- */
         /* Contenedor para el GIF (segundo corazón) que servirá como botón */
         #florContainer {
             text-align: center;
@@ -178,7 +177,7 @@
         }
 
             #fotoContainer img {
-                max-width: 90%;
+                max-width: 45%; /* Se reduce el tamaño a la mitad */
                 height: auto;
             }
             /* Nuevo estilo romántico para el texto final */
@@ -197,7 +196,6 @@
         <source src="fondo.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
     </video>
-
     <!-- Contenedor del primer corazón de entrada -->
     <div id="entryContainer">
         <button id="entryButton" aria-label="Abrir carta de amor">
@@ -216,15 +214,23 @@
             </div>
         </button>
     </div>
-
     <!-- Contenedor de la carta (mensaje) -->
     <div id="messageContainer">
         <div id="message">
-            <p class="fade-in visible">No hay día en que no sueñe con el momento en que pueda perderme completamente en ti. La forma en que tus labios buscan los míos, cómo tus manos recorren mi piel con esa mezcla perfecta de ternura y pasión, me tiene completamente rendido ante ti.</p>
-            <p class="fade-in visible">Me enciendes con una sola mirada, con ese brillo en tus ojos que parece invitarme a descubrir cada secreto de tu ser. Me pierdo en el aroma de tu piel, en el calor de tu cuerpo que me llama, me envuelve, y me hace desearte como nada en este mundo.</p>
-            <p class="fade-in visible">Hay noches en las que mi mente vaga, imaginando tus suspiros entrecortados, tus dedos aferrándose a mí, y el fuego que creamos juntos, ese que parece no apagarse nunca. Tus curvas son un mapa que quiero recorrer una y otra vez, con mis manos, mis labios y cada parte de mí que late por ti.</p>
-            <p class="fade-in visible">Te amo con una intensidad que me consume, pero también te deseo de una manera que no puedo explicar con palabras. Eres el punto donde el amor más puro y la pasión más ardiente se encuentran, y no hay nada que anhele más que ser la persona que lo comparte todo contigo.</p>
-            <p class="fade-in visible">Cada caricia, cada beso, cada momento contigo es un recuerdo que llevo grabado en mi alma, y cada uno me deja con ganas de más. Porque contigo no hay límites, solo un deseo infinito de entregarnos al amor y al placer que compartimos.</p>
+            <p class="fade-in">Ya que has sido curiosa, a partir de este momento tendré el honor de desvelar mi alma de trovador ante ti, expresando mis sentimientos como ha de ser, intentando conquistarte otro día más como si fuese el primero de los días, aquellos en los que tuve la dicha de conocer a la mujer que estuve esperando por mucho tiempo, para poder escribir...</p>
+            <p class="fade-in">Desde el amanecer de nuestro idilio, cada instante a tu lado se ha convertido en una sinfonía celestial, una oda sublime a la perpetuidad del amor. Eres la encarnación de la belleza etérea, la musa que engalana mis días con su radiante esencia y su fulgor arrebatador.</p>
+            <p class="fade-in">Cada mirada tuya es un destello de luz en mi corazón, cada sonrisa tuya es una melodía que embriaga mi alma. Tu presencia es el bálsamo que sana mis heridas, el faro que guía mis pasos en la oscuridad. Eres el sueño del que nunca quise despertar, la realidad que supera cualquier fantasía.</p>
+            <p class="fade-in">Cada latido de mi corazón es un himno consagrado a tu nombre, cada suspiro una plegaria que clama por tu cercanía. Como el astro rey baña con su luz dorada las praderas infinitas, allí donde las flores son libres de crecer sin un atisbo de desasosiego, así iluminas mi existencia, disipando cualquier vestigio de sombra con tu sola presencia.</p>
+            <p class="fade-in">En la vastedad del universo, entre constelaciones ignotas y galaxias inexploradas, sé con certeza irrefutable que mi destino está inexorablemente entrelazado al tuyo. Eres el alfa y el omega de mis sentimientos, la fuente de mi júbilo y la razón de mis desvelos más dulces.</p>
+            <p class="fade-in">Amarte no es simplemente un acto, sino una vocación eterna, un compromiso sagrado que guardo con la devoción más pura. Si tan solo la eternidad me concediera infinitas vidas, si así fuera, juraría buscarte en cada una de ellas para volver a estar a tu lado y ver todos los rostros de tu alma.</p>
+            <p class="fade-in">Hoy, en este San Valentín, reafirmo con la solemnidad de un voto imperecedero que eres y serás por siempre el faro que guía mi alma, la poesía encarnada en cada uno de mis días. Días en los que no faltarán mis insistentes expresiones de amor, que aunque podrían malinterpretarse dada su impredecible naturaleza, no son más que mis sentimientos desbordantes tratando de alcanzar el lecho del corazón de la dama a la que profeso mi amor más sincero.</p>
+            <p class="fade-in">Porque en ti he encontrado la razón de mi existencia, la musa que inspira mis versos y la compañera que da sentido a mi andar. Porque en ti he hallado el amor más puro, la pasión... pasión en la que podría expresarme de la manera más vulgar y aun así no sería suficiente para describir siquiera lo que siento por ti, la pasión más ardiente que me consume y me hace desear cada parte de ti. Solo tú, mi musa, podrías calmar este fervor que me consume cada día de mi existencia sin excepción.</p>
+            <p class="fade-in">Que incluso si tuviera la fortuna de tener tu majestuosidad entre mis manos, no sería suficiente con tenerla solo una vez, porque soy un ser egoísta, un ser que solo querría más de tu encanto, porque un fuego eterno no es fácilmente aplacable. Y finalmente, tomándome el atrevimiento de cambiar el tono de esta misiva, yo...</p>
+            <p class="fade-in">No hay día en que no sueñe con el momento en que pueda perderme completamente en ti. La forma en que tus labios buscan los míos, cómo tus manos recorren mi piel con esa mezcla perfecta de ternura y pasión, me tiene completamente rendido ante ti.</p>
+            <p class="fade-in">Me enciendes con una sola mirada, con ese brillo en tus ojos que parece invitarme a descubrir cada secreto de tu ser. Me pierdo en el aroma de tu piel, en el calor de tu cuerpo que me llama, me envuelve y me hace desearte como nada en este mundo.</p>
+            <p class="fade-in">Hay noches en las que mi mente vaga, imaginando tus suspiros entrecortados, tus dedos aferrándose a mí y el fuego que creamos juntos, ese que parece no apagarse nunca. Tus curvas son un mapa que quiero recorrer una y otra vez con mis manos, mis labios y cada parte de mí que late por ti.</p>
+            <p class="fade-in">Te amo con una intensidad que me consume, pero también te deseo de una manera que no puedo explicar con palabras. Eres el punto donde el amor más puro y la pasión más ardiente se encuentran, y no hay nada que anhele más que ser la persona que lo comparte todo contigo.</p>
+            <p class="fade-in">Cada caricia, cada beso, cada momento contigo es un recuerdo que llevo grabado en mi alma, y cada uno me deja con ganas de más. Porque contigo no hay límites, solo un deseo infinito de entregarnos al amor y al placer que podríamos compartir.</p>
         </div>
         <!-- El GIF "flor" (segundo corazón) actúa como botón -->
         <div id="florContainer">
@@ -250,19 +256,16 @@
             </div>
         </div>
     </div>
-
     <!-- Contenedor para la imagen final y el mensaje -->
     <div id="fotoContainer">
         <img src="foto.jpg" alt="Foto">
-        <p>QUIERO SEGUIR ESCRIBIENDO NUESTRA HISTORIA JUNTOS</p>
+        <p>PARA LA MAS BELLA DE TODAS Y LA PERSONA <br /> QUE MÁS AMO EN ESTA VIDA</p>
     </div>
-
     <!-- AUDIO -->
     <audio id="song" loop>
         <source src="cancion.mp3" type="audio/mpeg">
         Tu navegador no soporta audio.
     </audio>
-
     <script>
         // Al presionar el primer corazón se inicia la carta
         document.getElementById('entryButton').addEventListener('click', function () {
@@ -275,9 +278,13 @@
                 var messageContainer = document.getElementById('messageContainer');
                 messageContainer.style.display = 'block';
                 messageContainer.style.opacity = 1;
+                // Hacemos que inicialmente todos los párrafos sean visibles
+                var fadeElements = document.querySelectorAll('.fade-in');
+                fadeElements.forEach(function (element) {
+                    element.classList.add('visible');
+                });
             }, 1000);
         });
-
         // Al presionar el GIF (segundo corazón) se desvanece la carta y aparece la imagen final con el mensaje
         document.getElementById('florContainer').addEventListener('click', function () {
             var messageContainer = document.getElementById('messageContainer');
@@ -291,6 +298,19 @@
                 fotoContainer.style.transition = "opacity 2s ease-in";
                 fotoContainer.style.opacity = 1;
             }, 2000);
+        });
+        // Efecto fade-in y fade-out al hacer scroll
+        document.addEventListener('scroll', function () {
+            var fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(function (element) {
+                var rect = element.getBoundingClientRect();
+                // Si el elemento está visible en la ventana, se añade la clase 'visible'
+                if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+                    element.classList.add('visible');
+                } else {
+                    element.classList.remove('visible');
+                }
+            });
         });
     </script>
 </body>
